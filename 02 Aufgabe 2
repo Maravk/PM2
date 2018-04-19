@@ -9,7 +9,7 @@ Die Methode ist nur für positive Zahlen korrekt, bei negativen ungeraden Zahlen
 da bei diesen Zahlen -1 mit 1 verglichen wird.
 Dieses Problem tritt nicht auf wenn man auf gerade Zahlen prüft, da 0 kein Vorzeichen haben kann, und das Ergebnis negiert:
 
-	public static boolean isOdd(long i) {
+  public static boolean isOdd(long i) {
     return (i % 2 != 0);
   }
   
