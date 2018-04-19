@@ -19,9 +19,24 @@ Ein char ist 16 bit groß und unsigned, reicht also von 0 - 65535, also wird -1 
 Die letzte Konvertierung zu int geht ohne Probleme, also bleibt es bei 65535.
 
 3.
+Da Bitweises XOR:
+
+1984     00000000 00000000 00000111 11000000
+2001     00000000 00000000 00000111 11010001
+
+XOR      00000000 00000000 00000000 00010001
+2001     00000000 00000000 00000111 11010001
+
+XOR=     00000000 00000000 00000111 11000000    Y
+1984     00000000 00000000 00000111 11000000
+XOR=     00000000 00000000 00000000 00000000    X
+
+folglich ist X = 0 und Y = 1984
 
 
 4.
+Der Error liegt daran dass \u in Unicode ein Escape ist. Man könnte // schreiben damit dies nicht passiert.
+
 Es schreibt "Hello world" in die Konsole.
 Das liegt daran dass print ohne ln keine neu Zeile hinten dran hängt
 
