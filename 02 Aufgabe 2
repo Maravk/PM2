@@ -26,7 +26,9 @@ Es schreibt "Hello world" in die Konsole.
 Das liegt daran dass print ohne ln keine neu Zeile hinten dran hängt
 
 5.
-
-j++ ergibt j (!), und erhöht dann j um 1.
+Der Inkrement Operator wird hier mit der Variante Postfix verwendet, d. h. dass erst der Wert ausgelesen wird, 
+und dann erst um 1 erhöht wird.
+j++ ergibt j, und erhöht dann j um 1.
 Es wird also erst j gelesen und dann erhöht.
-Da wir aber j++ j zuweisen, weisen wir j praktisch nur j zu, also tuhen gar nichts.
+Da wir aber j = j++ zuweisen, weisen wir j praktisch nur j zu, also tuhen gar nichts.
+
