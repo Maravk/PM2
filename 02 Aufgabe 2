@@ -1,0 +1,18 @@
+Rene Hagemann, Mara von Kroge
+
+Aufgabenblatt 02: IO, Collections, Operatoren
+
+2
+
+1.
+Die Methode ist nur für positive Zahlen korrekt, bei negativen ungeraden Zahlen liefert sie false,
+da bei diesen Zahlen -1 mit 1 verglichen wird.
+Dieses Problem tritt nicht auf wenn man auf gerade Zahlen prüft, da 0 kein Vorzeichen haben kann, und das Ergebnis negiert:
+
+	public static boolean isOdd(long i) {
+    return (i % 2 != 0);
+  }
+  
+2.
+Ein byte ist 8 bit groß und signed, also wird die -1 problemlos gespeichert.
+Ein char ist 16 bit groß 
