@@ -15,4 +15,18 @@ Dieses Problem tritt nicht auf wenn man auf gerade Zahlen prüft, da 0 kein Vorz
   
 2.
 Ein byte ist 8 bit groß und signed, also wird die -1 problemlos gespeichert.
-Ein char ist 16 bit groß 
+Ein char ist 16 bit groß und unsigned, reicht also von 0 - 65535, also wird -1 zu 65535.
+Die letzte Konvertierung zu int geht ohne Probleme, also bleibt es bei 65535.
+
+3.
+
+
+4.
+Es schreibt "Hello world" in die Konsole.
+Das liegt daran dass print ohne ln keine neu Zeile hinten dran hängt
+
+5.
+
+j++ ergibt j (!), und erhöht dann j um 1.
+Es wird also erst j gelesen und dann erhöht.
+Da wir aber j++ j zuweisen, weisen wir j praktisch nur j zu, also tuhen gar nichts.
