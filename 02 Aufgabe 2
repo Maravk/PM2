@@ -1,0 +1,48 @@
+Rene Hagemann, Mara von Kroge
+
+Aufgabenblatt 02: IO, Collections, Operatoren
+
+2
+
+1.
+Die Methode ist nur für positive Zahlen korrekt, bei negativen ungeraden Zahlen liefert sie false,
+da bei diesen Zahlen -1 mit 1 verglichen wird.
+Dieses Problem tritt nicht auf wenn man auf gerade Zahlen prüft, da 0 kein Vorzeichen haben kann, und das Ergebnis negiert:
+
+  public static boolean isOdd(long i) {
+    return (i % 2 != 0);
+  }
+  
+2.
+Ein byte ist 8 bit groß und signed, also wird die -1 problemlos gespeichert.
+Ein char ist 16 bit groß und unsigned, reicht also von 0 - 65535, also wird -1 zu 65535.
+Die letzte Konvertierung zu int geht ohne Probleme, also bleibt es bei 65535.
+
+3.
+Da Bitweises XOR:
+
+1984     00000000 00000000 00000111 11000000
+2001     00000000 00000000 00000111 11010001
+
+XOR      00000000 00000000 00000000 00010001
+2001     00000000 00000000 00000111 11010001
+
+XOR=     00000000 00000000 00000111 11000000    Y
+1984     00000000 00000000 00000111 11000000
+XOR=     00000000 00000000 00000000 00000000    X
+
+folglich ist X = 0 und Y = 1984
+
+
+4.
+Der Error liegt daran dass \u in Unicode ein Escape ist. Man könnte // schreiben damit dies nicht passiert.
+
+Es schreibt "Hello world" in die Konsole.
+Das liegt daran dass print ohne ln keine neu Zeile hinten dran hängt
+
+5.
+Der Inkrement Operator wird hier mit der Variante Postfix verwendet, d. h. dass erst der Wert ausgelesen wird, 
+und dann erst um 1 erhöht wird.
+j++ ergibt j, und erhöht dann j um 1.
+Da wir aber j = j++ zuweisen, weisen wir j praktisch nur j zu, also tuhen gar nichts.
+
