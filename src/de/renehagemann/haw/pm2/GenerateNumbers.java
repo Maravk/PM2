@@ -57,7 +57,7 @@ public class GenerateNumbers {
             while((line = in.readLine()) != null){
                 int index = line.indexOf(" i");
                 String a = line.substring(0, index);
-                String b = line.substring(index + 1, line.length());
+                String b = line.substring(index + 2, line.length());
                 numbers.add(new complexImmutable(Double.parseDouble(a), Double.parseDouble(b)));
             }
         }catch (IOException ioe){
@@ -83,7 +83,7 @@ public class GenerateNumbers {
     /**
      * Creates a number of complex numbers, writes them to a file, reads them in a list and an array, sorts them and finally writes them back into separate files
      */
-    public static void main(){
+    public static void main(String[] args){
         GenerateNumbers create = new GenerateNumbers();
 
         GenerateNumbers.writeNumbers("generate.txt", create.getNumbers());
@@ -95,7 +95,11 @@ public class GenerateNumbers {
         Arrays.sort(numberArray, Comparator.comparingDouble(A_complex::getValue));
 
         complexImmutable[] temp = new complexImmutable[numberList.size()];
-        temp = (complexImmutable[]) numberList.toArray();
+        int i = 0;
+        for (complexImmutable number : numberList){
+            temp[i] = number;
+            i++;
+        }
 
         GenerateNumbers.writeNumbers("list.txt", temp);
         GenerateNumbers.writeNumbers("array.txt", numberArray);
