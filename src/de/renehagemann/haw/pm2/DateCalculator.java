@@ -6,15 +6,12 @@
 package de.renehagemann.haw.pm2;
 import java.time.*;
 import java.time.LocalDate;
-import java.time.Period;
-import java.util.Calendar;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import java.text.SimpleDateFormat;
 import java.time.temporal.TemporalAdjusters;
-import java.util.Date;
- 
+
+
 /* Können jetzt wenigstens einen begrenzten Stream aufrufen,
  * jetzt muss nur noch das Ergebnis gefiltert werden können. 
  */
@@ -35,6 +32,7 @@ public class DateCalculator {
          * Aufgabe 1.3.1
          */
 
+    	System.out.println("Aufgabe 1.3.1");
         LocalDate firstofmay = LocalDate.of(2018,5,1);
         System.out.println("The next Sunday after your date " + 
         firstofmay + ": " +nextSunday(firstofmay));
@@ -43,12 +41,15 @@ public class DateCalculator {
          * Aufgabe 1.3.2
          */
         
+        System.out.println("Aufgabe 1.3.2");
         int leapyear = firstofmay.getYear();
         System.out.println("The next Leapyear: " + nextLeapYear(leapyear));
         
         /*
          * Aufgabe 1.3.3
          */
+        System.out.println("Aufgabe 1.3.3");
+        
         
        
     }
