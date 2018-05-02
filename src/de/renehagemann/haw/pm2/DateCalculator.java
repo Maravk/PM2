@@ -36,14 +36,14 @@ public class DateCalculator {
          */
 
         LocalDate firstofmay = LocalDate.of(2018,5,1);
-        System.out.println(nextSunday(firstofmay));
+        System.out.println("The next Sunday after your date " + 
+        firstofmay + ": " +nextSunday(firstofmay));
         
         /*
          * Aufgabe 1.3.2
          */
         
         int leapyear = firstofmay.getYear();
-        System.out.println("The year of your date: "+ leapyear);
         System.out.println("The next Leapyear: " + nextLeapYear(leapyear));
         
         /*
@@ -53,7 +53,7 @@ public class DateCalculator {
        
     }
     public static int nextLeapYear(int year) {
-
+    	System.out.println("The year of your date: "+ year);
         if (year % 4 == 0)
         {
            return year;
