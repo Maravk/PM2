@@ -49,8 +49,8 @@ public class DateCalculator {
          * Aufgabe 1.3.3
          */
         System.out.println("Aufgabe 1.3.3");
-        
-        
+        System.out.println("Das Datum 42 Tage nach dem 1. Mai ist: " 
+        + firstofmay.plusDays(42));;
        
     }
     public static int nextLeapYear(int year) {
