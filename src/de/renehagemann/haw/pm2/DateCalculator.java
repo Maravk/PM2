@@ -10,8 +10,12 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
  
+/* Können jetzt wenigstens einen begrenzten Stream aufrufen,
+ * jetzt muss nur noch das Ergebnis gefiltert werden können. 
+ */
+
 public class DateCalculator {
- 
+
     public static void main(String[] args)
     {
         System.out.println( getDaysInJava8(LocalDate.now(), 10) );
