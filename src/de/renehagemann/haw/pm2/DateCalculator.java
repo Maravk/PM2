@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.time.temporal.TemporalAdjusters;
+import java.time.DayOfWeek;
 
 
 /* Können jetzt wenigstens einen begrenzten Stream aufrufen,
@@ -23,14 +24,20 @@ public class DateCalculator {
     	/*
     	 * Aufgabe 1.1	
     	 */
+    	
     	// gesamter Stream wird geprinted
     	LocalDate firstofmay = LocalDate.of(1889,5,1);
         System.out.println( getDays(firstofmay, (2100-1889) ));
+        Stream<LocalDate> allFirstMays = getDays(firstofmay, (2100-1889));
+        Stream<LocalDate> tuesdayFirstMays = 
+        allFirstMays.filter(n-> n.getDayOfWeek.name == "TUESDAY");
         
+        System.out.println(tuesdayFirstMays);
         
         /* 
          * Aufgabe 1.3.1
          */
+        
         firstofmay = LocalDate.of(2018, 5, 1);
     	System.out.println("Aufgabe 1.3.1");
         System.out.println("The next Sunday after your date " + 
@@ -71,10 +78,10 @@ public class DateCalculator {
     }
  
     //Stream of dates with 1 Year difference
-    public static List<LocalDate> getDays(LocalDate start, int days)
+    public static Stream<LocalDate> getDays(LocalDate start, int days)
     {
         return Stream.iterate(start, date -> date.plusYears(1))
-                .limit(days)
-                .collect(Collectors.toList());
+                .limit(days);
+                //.collect(Collectors.toList());
     }
 }
