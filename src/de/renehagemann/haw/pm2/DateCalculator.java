@@ -25,7 +25,7 @@ public class DateCalculator {
     	 */
     	// gesamter Stream wird geprinted (auskommentiert)
     	LocalDate firstofmay = LocalDate.of(1889,5,1);
-        System.out.println( getDaysInJava8(firstofmay, (2100-1889) ));
+        System.out.println( getDays(firstofmay, (2100-1889) ));
 
         
         
@@ -72,7 +72,7 @@ public class DateCalculator {
     }
  
     //Stream of dates with 1 day difference
-    public static List<LocalDate> getDaysInJava8(LocalDate start, int days)
+    public static List<LocalDate> getDays(LocalDate start, int days)
     {
         return Stream.iterate(start, date -> date.plusYears(1))
                 .limit(days)
