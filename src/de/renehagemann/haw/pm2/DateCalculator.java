@@ -23,10 +23,9 @@ public class DateCalculator {
     	/*
     	 * Aufgabe 1.1	
     	 */
-    	// gesamter Stream wird geprinted (auskommentiert)
+    	// gesamter Stream wird geprinted
     	LocalDate firstofmay = LocalDate.of(1889,5,1);
         System.out.println( getDays(firstofmay, (2100-1889) ));
-
         
         
         /* 
@@ -71,7 +70,7 @@ public class DateCalculator {
     	return date.with(TemporalAdjusters.next(DayOfWeek.SUNDAY));
     }
  
-    //Stream of dates with 1 day difference
+    //Stream of dates with 1 Year difference
     public static List<LocalDate> getDays(LocalDate start, int days)
     {
         return Stream.iterate(start, date -> date.plusYears(1))
