@@ -24,16 +24,16 @@ public class DateCalculator {
     	 * Aufgabe 1.1	
     	 */
     	// gesamter Stream wird geprinted (auskommentiert)
-        // System.out.println( getDaysInJava8(LocalDate.now(), (2100-1889)*365) );
+    	LocalDate firstofmay = LocalDate.of(1889,5,1);
+        System.out.println( getDaysInJava8(firstofmay, (2100-1889) ));
 
         
         
         /* 
          * Aufgabe 1.3.1
          */
-
+        firstofmay = LocalDate.of(2018, 5, 1);
     	System.out.println("Aufgabe 1.3.1");
-        LocalDate firstofmay = LocalDate.of(2018,5,1);
         System.out.println("The next Sunday after your date " + 
         firstofmay + ": " +nextSunday(firstofmay));
         
@@ -63,7 +63,6 @@ public class DateCalculator {
         {
             year = year + (year % 4);
             return year;
-            
         }        
     }
     
@@ -75,7 +74,7 @@ public class DateCalculator {
     //Stream of dates with 1 day difference
     public static List<LocalDate> getDaysInJava8(LocalDate start, int days)
     {
-        return Stream.iterate(start, date -> date.plusDays(1))
+        return Stream.iterate(start, date -> date.plusYears(1))
                 .limit(days)
                 .collect(Collectors.toList());
     }
