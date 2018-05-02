@@ -4,7 +4,6 @@
  */
 
 package de.renehagemann.haw.pm2;
-import java.time.*;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -22,12 +21,7 @@ public class DateCalculator {
     	 * Aufgabe 1.1	
     	 */
     	System.out.println("Aufgabe 1.1");
-    	
     	LocalDate firstofmay = LocalDate.of(1889,5,1);
-    	
-//    	System.out.println(firstofmay.getDayOfWeek());
-//    	
-//        System.out.println( getDays(firstofmay, (2100-1889) ));
         Stream<LocalDate> allFirstMays = getDays(firstofmay, (2100-1888));
         List<LocalDate> tuesdayFirstMays = 
         allFirstMays.filter(n-> n.getDayOfWeek() == DayOfWeek.TUESDAY)
@@ -42,7 +36,7 @@ public class DateCalculator {
         System.out.println("\n\nAufgabe 1.3.1\n");
         firstofmay = LocalDate.of(2018, 5, 1);
         System.out.println("The next Sunday after your date " + 
-        firstofmay + ": " +nextSunday(firstofmay));
+        firstofmay + ": " + nextSunday(firstofmay));
         
         /*
          * Aufgabe 1.3.2
@@ -59,9 +53,10 @@ public class DateCalculator {
         + firstofmay.plusDays(42));
        
     }
+    
     public static int nextLeapYear(int year) {
     	System.out.println("The year of your date: "+ year);
-        if (year % 4 == 0)
+        if (year % 4 == 0) //Works only for years between 1901-2099
         {
            return year;
         }
@@ -71,7 +66,6 @@ public class DateCalculator {
             return year;
         }        
     }
-    
     
     public static LocalDate nextSunday(LocalDate date) {
     	return date.with(TemporalAdjusters.next(DayOfWeek.SUNDAY));
