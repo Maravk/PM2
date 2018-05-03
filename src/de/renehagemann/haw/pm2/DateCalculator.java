@@ -30,6 +30,16 @@ public class DateCalculator {
         System.out.println("Jeder erste Mai zwischen 1889 und 2100 der "
         + "auf einen Dienstag fällt: " + tuesdayFirstMays);
         
+        /*
+         * Aufgabe 1.2
+         */
+        System.out.println("\n\nAufgabe 1.2\n");
+        LocalDate firstMay = LocalDate.of(1945, 5, 1);
+        LocalDate nextFirstMay = LocalDate.of(1951, 5, 1);
+        System.out.println("Your chosen dates: " + firstMay + ", " + nextFirstMay);
+        DifferenceBetweenDates diff = new DifferenceBetweenDates(firstMay, nextFirstMay);
+        diff.printDifference();
+        
         /* 
          * Aufgabe 1.3.1
          */
